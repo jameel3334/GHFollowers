@@ -14,6 +14,8 @@
 		1918DA112A98271C00456184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1918DA0F2A98271C00456184 /* LaunchScreen.storyboard */; };
 		1918DA192A9D2AAD00456184 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA182A9D2AAD00456184 /* SearchVC.swift */; };
 		1918DA1B2A9D2AE800456184 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA1A2A9D2AE800456184 /* FavoriteVC.swift */; };
+		1918DA1D2A9D41C700456184 /* GFButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA1C2A9D41C700456184 /* GFButtons.swift */; };
+		1918DA1F2A9D43BA00456184 /* GFTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA1E2A9D43BA00456184 /* GFTextFields.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		1918DA122A98271C00456184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1918DA182A9D2AAD00456184 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		1918DA1A2A9D2AE800456184 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
+		1918DA1C2A9D41C700456184 /* GFButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButtons.swift; sourceTree = "<group>"; };
+		1918DA1E2A9D43BA00456184 /* GFTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextFields.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				1918DA062A98271900456184 /* SceneDelegate.swift */,
 				1918DA182A9D2AAD00456184 /* SearchVC.swift */,
 				1918DA1A2A9D2AE800456184 /* FavoriteVC.swift */,
+				1918DA1C2A9D41C700456184 /* GFButtons.swift */,
+				1918DA1E2A9D43BA00456184 /* GFTextFields.swift */,
 				1918DA082A98271900456184 /* ViewController.swift */,
 				1918DA0D2A98271C00456184 /* Assets.xcassets */,
 				1918DA0F2A98271C00456184 /* LaunchScreen.storyboard */,
@@ -140,7 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1918DA1D2A9D41C700456184 /* GFButtons.swift in Sources */,
 				1918DA192A9D2AAD00456184 /* SearchVC.swift in Sources */,
+				1918DA1F2A9D43BA00456184 /* GFTextFields.swift in Sources */,
 				1918DA092A98271900456184 /* ViewController.swift in Sources */,
 				1918DA052A98271900456184 /* AppDelegate.swift in Sources */,
 				1918DA072A98271900456184 /* SceneDelegate.swift in Sources */,
