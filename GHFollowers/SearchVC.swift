@@ -43,19 +43,19 @@ class SearchVC: UIViewController {
     private func configureUserTextField() {
         view.addSubview(userTextField)
         NSLayoutConstraint.activate([
-            logoView.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 48),
-            logoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            logoView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            logoView.heightAnchor.constraint(equalToConstant: 50)
+            userTextField.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 48),
+            userTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            userTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            userTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     private func configureCallToActionButton() {
         view.addSubview(callToActionButton)
         NSLayoutConstraint.activate([
-            logoView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-            logoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            logoView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            logoView.heightAnchor.constraint(equalToConstant: 50)
+            callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            callToActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            callToActionButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         
