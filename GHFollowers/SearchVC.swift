@@ -20,6 +20,7 @@ class SearchVC: UIViewController {
         configureLogoView()
         configureUserTextField()
         configureCallToActionButton()
+        createTapToDismissGuesture()
     }
     
     override func viewWillAppear(_ amimated: Bool) {
@@ -30,7 +31,7 @@ class SearchVC: UIViewController {
     private func configureLogoView() {
         view.addSubview(logoView)
         logoView.translatesAutoresizingMaskIntoConstraints = false
-        logoView.image = UIImage(named: "main-logo")!
+        logoView.image = UIImage(named: "gh-logo")!
         
         NSLayoutConstraint.activate([
             logoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
@@ -42,6 +43,7 @@ class SearchVC: UIViewController {
     
     private func configureUserTextField() {
         view.addSubview(userTextField)
+        userTextField.delegate = self
         NSLayoutConstraint.activate([
             userTextField.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 48),
             userTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
@@ -49,6 +51,12 @@ class SearchVC: UIViewController {
             userTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    
+    private func createTapToDismissGuesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+    
     private func configureCallToActionButton() {
         view.addSubview(callToActionButton)
         NSLayoutConstraint.activate([
@@ -57,7 +65,12 @@ class SearchVC: UIViewController {
             callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             callToActionButton.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
-        
+    }
+}
+
+extension SearchVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("DID")
+        return true
     }
 }
