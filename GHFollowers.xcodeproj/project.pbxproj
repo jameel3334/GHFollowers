@@ -20,6 +20,7 @@
 		1918DA232AA1217D00456184 /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA222AA1217D00456184 /* GFTitleLabel.swift */; };
 		1918DA252AA1234F00456184 /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA242AA1234F00456184 /* GFBodyLabel.swift */; };
 		1918DA272AA126F200456184 /* GFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA262AA126F200456184 /* GFAlertVC.swift */; };
+		1918DA292AA13CC400456184 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA282AA13CC400456184 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1918DA222AA1217D00456184 /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
 		1918DA242AA1234F00456184 /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
 		1918DA262AA126F200456184 /* GFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertVC.swift; sourceTree = "<group>"; };
+		1918DA282AA13CC400456184 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				1918DA222AA1217D00456184 /* GFTitleLabel.swift */,
 				1918DA242AA1234F00456184 /* GFBodyLabel.swift */,
 				1918DA262AA126F200456184 /* GFAlertVC.swift */,
+				1918DA282AA13CC400456184 /* UIViewController+Extension.swift */,
 				1918DA202A9E9FA900456184 /* FollowerListVC.swift */,
 				1918DA1A2A9D2AE800456184 /* FavoriteVC.swift */,
 				1918DA1C2A9D41C700456184 /* GFButtons.swift */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1918DA292AA13CC400456184 /* UIViewController+Extension.swift in Sources */,
 				1918DA1D2A9D41C700456184 /* GFButtons.swift in Sources */,
 				1918DA192A9D2AAD00456184 /* SearchVC.swift in Sources */,
 				1918DA1F2A9D43BA00456184 /* GFTextFields.swift in Sources */,
