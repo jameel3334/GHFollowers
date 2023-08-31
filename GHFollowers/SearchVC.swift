@@ -39,6 +39,7 @@ class SearchVC: UIViewController {
     
     @objc func pushFavoriteListVC() {
         guard isUsernameEntered else {
+            presentAlertOnMainThread(title: "Empty Username", message: "Please enter the username. We need to know who to look for", buttonText: "Okay")
             return
         }
         let followerList = FollowerListVC()

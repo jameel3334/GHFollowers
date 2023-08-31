@@ -15,7 +15,7 @@ class GFAlertVC: UIViewController {
     let actionButton = GFButtons(backgroundColor: .systemPink, title: "Ok")
     
     var alertTitle: String?
-    var alertMessage: String?
+    var message: String?
     var buttonTitle: String?
     
     let padding: CGFloat = 20
@@ -24,7 +24,7 @@ class GFAlertVC: UIViewController {
     init(title: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
         self.alertTitle = title
-        self.alertMessage = message
+        self.message = message
         self.buttonTitle = buttonTitle
     }
     
@@ -47,6 +47,7 @@ class GFAlertVC: UIViewController {
         containerView.layer.borderWidth = 2
         containerView.layer.borderColor = UIColor.white.cgColor
         containerView.backgroundColor = .systemBackground
+        containerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -83,13 +84,13 @@ class GFAlertVC: UIViewController {
     
     func configureBodyLabel() {
         containerView.addSubview(bodyLabel)
-        bodyLabel.text = alertMessage ?? "Unable to Complete Request"
+        bodyLabel.text = message ?? "Unable to Complete Request"
         bodyLabel.numberOfLines = 4
         
         NSLayoutConstraint.activate([
             bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             bodyLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
-            bodyLabel.trailingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: -padding),
+            bodyLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
             bodyLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
         ])
 
