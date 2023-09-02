@@ -23,6 +23,10 @@
 		1918DA292AA13CC400456184 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA282AA13CC400456184 /* UIViewController+Extension.swift */; };
 		1918DA302AA3659100456184 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA2F2AA3659000456184 /* Follower.swift */; };
 		1918DA322AA365E600456184 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA312AA365E600456184 /* User.swift */; };
+		1918DA352AA3CB9700456184 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA342AA3CB9700456184 /* APIServiceProtocol.swift */; };
+		1918DA372AA3CC5E00456184 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA362AA3CC5E00456184 /* APIService.swift */; };
+		1918DA392AA3D23B00456184 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA382AA3D23B00456184 /* APIError.swift */; };
+		1918DA3B2AA3DAD500456184 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA3A2AA3DAD500456184 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		1918DA282AA13CC400456184 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		1918DA2F2AA3659000456184 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		1918DA312AA365E600456184 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1918DA342AA3CB9700456184 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
+		1918DA362AA3CC5E00456184 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		1918DA382AA3D23B00456184 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		1918DA3A2AA3DAD500456184 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 				1918DA2C2AA1516800456184 /* App */,
 				1918DA2B2AA1514600456184 /* ViewControllers */,
 				1918DA2A2AA1512E00456184 /* CustomViews */,
+				1918DA332AA3CB5100456184 /* Networking */,
 				1918DA0D2A98271C00456184 /* Assets.xcassets */,
 				1918DA0F2A98271C00456184 /* LaunchScreen.storyboard */,
 				1918DA122A98271C00456184 /* Info.plist */,
@@ -135,6 +144,17 @@
 				1918DA312AA365E600456184 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1918DA332AA3CB5100456184 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1918DA342AA3CB9700456184 /* APIServiceProtocol.swift */,
+				1918DA3A2AA3DAD500456184 /* NetworkManager.swift */,
+				1918DA382AA3D23B00456184 /* APIError.swift */,
+				1918DA362AA3CC5E00456184 /* APIService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,11 +227,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1918DA3B2AA3DAD500456184 /* NetworkManager.swift in Sources */,
 				1918DA292AA13CC400456184 /* UIViewController+Extension.swift in Sources */,
 				1918DA1D2A9D41C700456184 /* GFButtons.swift in Sources */,
 				1918DA192A9D2AAD00456184 /* SearchVC.swift in Sources */,
+				1918DA392AA3D23B00456184 /* APIError.swift in Sources */,
+				1918DA352AA3CB9700456184 /* APIServiceProtocol.swift in Sources */,
 				1918DA1F2A9D43BA00456184 /* GFTextFields.swift in Sources */,
 				1918DA092A98271900456184 /* ViewController.swift in Sources */,
+				1918DA372AA3CC5E00456184 /* APIService.swift in Sources */,
 				1918DA052A98271900456184 /* AppDelegate.swift in Sources */,
 				1918DA322AA365E600456184 /* User.swift in Sources */,
 				1918DA272AA126F200456184 /* GFAlertVC.swift in Sources */,
