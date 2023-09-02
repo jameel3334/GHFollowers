@@ -29,7 +29,7 @@ class SearchVC: UIViewController {
     
     override func viewWillAppear(_ amimated: Bool) {
         super.viewWillAppear(amimated)
-        navigationController?.isNavigationBarHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: true) 
     }
     
     private func createTapToDismissGuesture() {
