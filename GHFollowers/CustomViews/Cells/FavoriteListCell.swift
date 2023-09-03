@@ -1,5 +1,5 @@
 //
-//  FavoriteListCell.swift
+//  FollowerCell.swift
 //  GHFollowers
 //
 //  Created by Mohammed Jameeluddin on 9/3/23.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class FavoriteListCell: UICollectionViewCell {
-    static let reuseID = "FavoriteListCell"
+class FollowerCell: UICollectionViewCell {
+    static let reuseID = "FollowerCell"
     
     let avatarImageView = GFAvatarImage(frame: .zero)
     let usernameLabel = GFTitleLabel(textAlignemnt: .center, fontSize: 16)
