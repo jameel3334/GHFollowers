@@ -24,17 +24,7 @@ class FollowerListVC: UIViewController {
         configureCollectionView()
         configureViewController()
         configureDataSource()
-        func fetchFollowers(for username: String) async throws {
-            let baseURL = "http://api.github.com/users/"
-            let endpoint = baseURL + "\(username)/followers?per_page=100&page=100"
-            do {
-                var data = try await NetworkManager.shared.service.fetchData(from: endpoint, for: Follower.self)
-                followers = data
-                updateData()
-            } catch {
-                throw NetworkingError.invalidData
-            }
-        }
+        getFollowers()
     }
     
     
@@ -53,6 +43,21 @@ class FollowerListVC: UIViewController {
         view.addSubview(collectionView)
         collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
+    }
+    
+    func getFollowers() {
+        NetworkManager.shared.getFollowers(for: username, page: 1) { result in
+            
+            switch result {
+            case .success(let followers):
+                self.followers = followers
+                print(followers)
+                self.updateData()
+                
+            case .failure(let error):
+                self.presentAlertOnMainThread(title: "Bad Stuff Happend", message: error.rawValue, buttonText: "Ok")
+            }
+        }
     }
     
     func customThreeColumnFlowLayout() -> UICollectionViewFlowLayout {

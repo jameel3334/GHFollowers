@@ -37,7 +37,7 @@ class SearchVC: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    @objc func pushFavoriteListVC() {
+    @objc func pushFollowerListVC() {
         guard isUsernameEntered else {
             presentAlertOnMainThread(title: "Empty Username", message: "Please enter the username. We need to know who to look for", buttonText: "Okay")
             return
@@ -79,7 +79,7 @@ class SearchVC: UIViewController {
     
     private func configureCallToActionButton() {
         view.addSubview(callToActionButton)
-        callToActionButton.addTarget(self, action: #selector(pushFavoriteListVC), for: .touchUpInside)
+        callToActionButton.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
         NSLayoutConstraint.activate([
             callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             callToActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
@@ -91,7 +91,7 @@ class SearchVC: UIViewController {
 
 extension SearchVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        pushFavoriteListVC()
+        pushFollowerListVC()
         return true
     }
 }
