@@ -9,77 +9,79 @@ import UIKit
 
 class SearchVC: UIViewController {
     
+    let logoImageView       = UIImageView()
+    let usernameTextField   = GFTextFields()
+    let callToActionButton  = GFButtons(backgroundColor: .systemGreen, title: "Get Followers")
     
-    let logoView = UIImageView()
-    let userTextField = GFTextFields()
-    let callToActionButton = GFButtons(backgroundColor: .systemGreen, title: "Get Followers")
-    
-    var isUsernameEntered: Bool {
-        return !userTextField.text!.isEmpty
-    }
+    var isUsernameEntered: Bool { return !usernameTextField.text!.isEmpty }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        configureLogoView()
-        configureUserTextField()
+        configureLogoImageView()
+        configureTextField()
         configureCallToActionButton()
-        createTapToDismissGuesture()
+        createDismissKeyboardTapGesture()
     }
     
-    override func viewWillAppear(_ amimated: Bool) {
-        super.viewWillAppear(amimated)
-        navigationController?.setNavigationBarHidden(true, animated: true) 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    private func createTapToDismissGuesture() {
+    
+    func createDismissKeyboardTapGesture() {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
+    
     @objc func pushFollowerListVC() {
         guard isUsernameEntered else {
-            presentAlertOnMainThread(title: "Empty Username", message: "Please enter the username. We need to know who to look for", buttonText: "Okay")
+            presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter a username. We need to know who to look for 😀.", buttonTitle: "Ok")
             return
         }
-        let followerList = FollowerListVC()
-        followerList.username = userTextField.text
-        followerList.title = userTextField.text
-        navigationController?.pushViewController(followerList, animated: true)
+        
+        let followerListVC      = FollowerListVC()
+        followerListVC.username = usernameTextField.text
+        followerListVC.title    = usernameTextField.text
+        navigationController?.pushViewController(followerListVC, animated: true)
     }
     
     
-    
-    
-    
-    
-    private func configureLogoView() {
-        view.addSubview(logoView)
-        logoView.translatesAutoresizingMaskIntoConstraints = false
-        logoView.image = UIImage(named: "gh-logo")!
+    func configureLogoImageView() {
+        view.addSubview(logoImageView)
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        logoImageView.image = UIImage(named: "gh-logo")!
         
         NSLayoutConstraint.activate([
-            logoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
-            logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoView.heightAnchor.constraint(equalToConstant: 200),
-            logoView.widthAnchor.constraint(equalToConstant: 200)
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
+            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImageView.heightAnchor.constraint(equalToConstant: 200),
+            logoImageView.widthAnchor.constraint(equalToConstant: 200)
         ])
     }
     
-    private func configureUserTextField() {
-        view.addSubview(userTextField)
-        userTextField.delegate = self
+    
+    func configureTextField() {
+        view.addSubview(usernameTextField)
+        usernameTextField.delegate = self
+        
         NSLayoutConstraint.activate([
-            userTextField.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 48),
-            userTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            userTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            userTextField.heightAnchor.constraint(equalToConstant: 50)
+            usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
+            usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            usernameTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
-    private func configureCallToActionButton() {
+    
+    func configureCallToActionButton() {
         view.addSubview(callToActionButton)
         callToActionButton.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             callToActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
@@ -88,6 +90,7 @@ class SearchVC: UIViewController {
         ])
     }
 }
+
 
 extension SearchVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
