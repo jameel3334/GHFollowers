@@ -30,7 +30,7 @@ class GFAvatarImage: UIImageView {
     }
     
     func downloadImage(from urlString: String) {
-        guard let self = self ( return )
+        guard let self = self else ( return )
         guard let url = URL(string: urlString) else { return }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
