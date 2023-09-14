@@ -9,6 +9,7 @@ import UIKit
 
 class GFAvatarImage: UIImageView {
     
+    let cache = NetworkManager.shared.cache
     let placeholderImage = UIImage(named: "avatar-placeholder")!
 
     override init(frame: CGRect) {
@@ -32,6 +33,11 @@ class GFAvatarImage: UIImageView {
     func downloadImage(from urlString: String) {
         guard let url = URL(string: urlString) else { return }
         
+        let cacheKey = NSString(string: urlString)
+        if let image = cache.object(forKey: cacheKey) {
+            self.image = image
+        }
+        
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let self = self else { return }
             if error != nil { return }
@@ -39,6 +45,7 @@ class GFAvatarImage: UIImageView {
             guard let data = data else { return }
             
             guard let image = UIImage(data: data) else { return }
+            self.cache.setObject(image, forKey: cacheKey)
             DispatchQueue.main.async {
                 self.image = image
             }
