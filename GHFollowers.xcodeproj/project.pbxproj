@@ -31,6 +31,7 @@
 		1918DA422AA4DB8100456184 /* GFAvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA412AA4DB8100456184 /* GFAvatarImage.swift */; };
 		1918DA442AA8173300456184 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1918DA432AA8173200456184 /* UIHelper.swift */; };
 		19E6613E2AB7807D0005B63D /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E6613D2AB7807D0005B63D /* EmptyStateView.swift */; };
+		19E661402AB79DBD0005B63D /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E6613F2AB79DBD0005B63D /* UserInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		1918DA412AA4DB8100456184 /* GFAvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImage.swift; sourceTree = "<group>"; };
 		1918DA432AA8173200456184 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		19E6613D2AB7807D0005B63D /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		19E6613F2AB79DBD0005B63D /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				1918DA202A9E9FA900456184 /* FollowerListVC.swift */,
 				1918DA1A2A9D2AE800456184 /* FavoriteVC.swift */,
 				1918DA182A9D2AAD00456184 /* SearchVC.swift */,
+				19E6613F2AB79DBD0005B63D /* UserInfoVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E661402AB79DBD0005B63D /* UserInfoVC.swift in Sources */,
 				1918DA402AA4DB4200456184 /* FavoriteListCell.swift in Sources */,
 				1918DA422AA4DB8100456184 /* GFAvatarImage.swift in Sources */,
 				1918DA3B2AA3DAD500456184 /* NetworkManager.swift in Sources */,
